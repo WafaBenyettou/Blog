@@ -1,0 +1,10 @@
+127.0.0.1 - - [02/Jun/2023:01:36:22 +0100] "GET / HTTP/1.1" 404 1076
+127.0.0.1 - - [02/Jun/2023:01:36:32 +0100] "GET /Blog/index.jsp HTTP/1.1" 200 8396
+127.0.0.1 - - [02/Jun/2023:01:36:33 +0100] "GET /Blog/css/mystyle.css HTTP/1.1" 200 65
+127.0.0.1 - - [02/Jun/2023:01:36:33 +0100] "GET /Blog/js/myjs.js HTTP/1.1" 200 590
+127.0.0.1 - - [02/Jun/2023:01:36:33 +0100] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [02/Jun/2023:01:36:35 +0100] "GET /Blog/login_page.jsp HTTP/1.1" 200 5781
+127.0.0.1 - - [02/Jun/2023:01:36:44 +0100] "POST /Blog/LoginServlet HTTP/1.1" 500 3654
+127.0.0.1 - - [02/Jun/2023:01:37:02 +0100] "GET /Blog/register_page.jsp HTTP/1.1" 200 8895
+127.0.0.1 - - [02/Jun/2023:01:37:26 +0100] "POST /Blog/RegisterServlet HTTP/1.1" 500 3663
+127.0.0.1 - - [02/Jun/2023:01:39:09 +0100] "POST /Blog/RegisterServlet HTTP/1.1" 404 1053
