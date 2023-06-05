@@ -16,7 +16,6 @@ INDEX VERSION 1.132+/home/wafa/Desktop/javaee/eclipse/Blog/.metadata/.plugins/or
 1865797976.index
 460686582.index
 2072493809.index
-730785527.index
 1758728944.index
 1727132777.index
 2409481139.index
