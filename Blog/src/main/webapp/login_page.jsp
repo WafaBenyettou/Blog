@@ -11,8 +11,10 @@
         <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            .banner-background{
-                clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 91%, 63% 100%, 22% 91%, 0 99%, 0 0);
+          body{
+                background:url(img/background.png);
+                background-size: cover;
+                background-attachment: fixed;
             }
         </style>
 
@@ -22,13 +24,13 @@
         <%@include  file="navbar.jsp" %>
 
 
-        <main class="d-flex align-items-center primary-background banner-background" style="height: 70vh">
+        <main class="d-flex align-items-center " style="height: 70vh">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
 
-                        <div class="card">
-                            <div class="card-header primary-background text-white text-center">
+                        <div class="card text-white bg-dark">
+                            <div class="card-header  text-white text-center">
                                 <span class="fa fa-user-plus fa-3x"></span>
                                 <br>
                                 <p>Login here</p>

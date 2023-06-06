@@ -11,24 +11,27 @@
         <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            .banner-background{
-                clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 91%, 63% 100%, 22% 91%, 0 99%, 0 0);
+          body{
+                background:url(img/background.png);
+                background-size: cover;
+                background-attachment: fixed;
             }
+           
         </style>
 
     </head>
     <body>
 
-        <%@include file="navbar.jsp" %>
+        <%@include file="./navbar.jsp" %>
 
-        <main class="primary-background  banner-background"  style="padding-bottom: 80px;">
+        <main style="padding-bottom: 80px; padding-top: 80px;">
 
             <div class="container">
 
                 <div class="col-md-6 offset-md-3">
 
-                    <div class="card">
-                        <div class="card-header text-center primary-background text-white">
+                    <div class="card text-white bg-dark">
+                        <div class="card-header text-center text-white">
                             <span class="fa fa-3x fa-user-circle"></span>
                             <br>
                             Register here

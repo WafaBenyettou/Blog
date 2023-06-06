@@ -13,7 +13,7 @@ public class LikeDao {
     public boolean insertLike(int pid, int uid) {
         boolean f = false;
         try {
-            String q = "insert into liked(pid,uid)values(?,?)";
+            String q = "insert into likes(pid,uid)values(?,?)";
             PreparedStatement p = this.con.prepareStatement(q);
             //values set...
             p.setInt(1, pid);
@@ -31,7 +31,7 @@ public class LikeDao {
     public int countLikeOnPost(int pid) {
         int count = 0;
 
-        String q = "select count(*) from liked where pid=?";
+        String q = "select count(*) from likes where pid=?";
         try {
             PreparedStatement p = this.con.prepareStatement(q);
             p.setInt(1, pid);
@@ -50,7 +50,7 @@ public class LikeDao {
     public boolean isLikedByUser(int pid, int uid) {
         boolean f = false;
         try {
-            PreparedStatement p = this.con.prepareStatement("select * from liked where pid=? and uid=?");
+            PreparedStatement p = this.con.prepareStatement("select * from likes where pid=? and uid=?");
             p.setInt(1, pid);
             p.setInt(2, uid);
             ResultSet set = p.executeQuery();
@@ -66,7 +66,7 @@ public class LikeDao {
     public boolean deleteLike(int pid, int uid) {
         boolean f = false;
         try {
-            PreparedStatement p = this.con.prepareStatement("delete from liked where pid=? and uid=? ");
+            PreparedStatement p = this.con.prepareStatement("delete from likes where pid=? and uid=? ");
             p.setInt(1, pid);
             p.setInt(2, uid);
             p.executeUpdate();

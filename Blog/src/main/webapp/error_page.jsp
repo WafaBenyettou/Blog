@@ -11,16 +11,18 @@
         <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            .banner-background{
-                clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 91%, 63% 100%, 22% 91%, 0 99%, 0 0);
+          body{
+                background:url(img/background.png);
+                background-size: cover;
+                background-attachment: fixed;
             }
         </style>
 
     </head>
     <body>
         <div class="container text-center">
-            <img src="img/error.png" class="img-fluid" >
-            <h3 class="display-3">Sorry ! Something went wrong ...</h3>
+            <img src="img/error1.png" class="img-fluid" style="height: 50vh" >
+            <h3 class="display-3 text-white">Sorry ! Something went wrong ...</h3>
             <%= exception%>
             <a href="index.jsp" class="btn primary-background btn-lg text-white mt-3">Home </a>
         </div>

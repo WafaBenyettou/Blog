@@ -32,7 +32,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%= p.getpTitle()%> || TechBlog by Learn Code with Durgesh </title>
+        <title><%= p.getpTitle()%> || Blog </title>
 
         <!--css-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -42,9 +42,7 @@
 
 
 
-            .banner-background{
-                clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 91%, 63% 100%, 22% 91%, 0 99%, 0 0);
-            }
+           
             .post-title{
                 font-weight: 100;
                 font-size: 30px;
@@ -70,7 +68,7 @@
             }
 
             body{
-                background:url(img/bg.jpeg);
+                background:url(img/background.png);
                 background-size: cover;
                 background-attachment: fixed;
             }
@@ -82,33 +80,20 @@
 
         <!--navbar--> 
 
-        <nav class="navbar navbar-expand-lg navbar-dark primary-background">
-            <a class="navbar-brand" href="index.jsp"> <span class="fa fa-asterisk"></span>   Tech Blog</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.jsp"> <span class="fa fa-asterisk"></span> CTF Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="profile.jsp"> <span class="	fa fa-bell-o"></span> LearnCode with Durgesh <span class="sr-only">(current)</span></a>
-                    </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"> <span class="	fa fa-bell-o"></span> Latest capture the falg competitions news <span class="sr-only">(current)</span></a>
+            </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="	fa fa-check-square-o"></span> Categories
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Programming Language</a>
-                            <a class="dropdown-item" href="#">Project Implementation</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Data Structure</a>
-                        </div>
-                    </li>
+                  
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <span class="	fa fa-address-card-o"></span> Contact</a>
-                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#add-post-modal" > <span class="	fa fa-asterisk"></span> Do Post</a>
@@ -131,22 +116,21 @@
         </nav>
 
 
-
         <!--end of navbar-->
 
         <!--main content of body-->
 
 
-        <div class="container">
+        <div class="container" >
 
-            <div class="row my-4">
+            <div class="row my-4" style="padding-bottom: 80px; padding-top: 80px;">
 
                 <div class="col-md-8 offset-md-2">
 
 
-                    <div class="card">
+                    <div class="card text-white bg-dark">
 
-                        <div class="card-header primary-background text-white">
+                        <div class="card-header text-white">
 
                             <h4 class="post-title"><%= p.getpTitle()%></h4>
 
@@ -181,7 +165,7 @@
                             </div>
 
                         </div>
-                        <div class="card-footer primary-background">
+                        <div class="card-footer bg-dark">
 
 
                             <%
