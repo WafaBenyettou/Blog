@@ -30,7 +30,7 @@
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1Ijoid2FmYWJlbnkiLCJhIjoiY2xpbDVxdXN1MG9zdjNla2RmN29hdW00YSJ9.IN6MEc3j0VmVkJqKijmulg';
+        mapboxgl.accessToken = 'ACCESS_TOKEN';
 
         var map = new mapboxgl.Map({
             container: 'map',
@@ -40,7 +40,7 @@
         });
 
         // Replace with your Shodan API key
-        var apiKey = 'imjJFXulzaB22NXcq13S6K2TsB0RDyPf';
+        var apiKey = 'SHODAN_API_KEY';
 
         // Make an API request to Shodan for the map data
         var apiUrl = 'https://api.shodan.io/shodan/ports?key=' + apiKey;
