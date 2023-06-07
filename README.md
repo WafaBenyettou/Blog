@@ -39,30 +39,30 @@ The JavaEE blog web app project utilizes the following technologies:
 
 The project is structured similarly to the previous example, with modifications to include the security measures, PostgreSQL database integration, ShodanxMapbox API integration, MVC architecture, and DAO pattern. Here is an overview of the project structure:
 
-src
 
-    main
-        java
-            com.blog.dao
-                 <dao files>
-            com.blog.entities
-                 <entities files>
-            com.blog.servlets
-                 <servlets files>
-            com.blog.helpers
-                 <helpers files>
+    src
+       main
+           java
+               com.blog.dao
+                    <dao files>
+               com.blog.entities
+                    <entities files>
+               com.blog.servlets
+                    <servlets files>
+               com.blog.helpers
+                    <helpers files>
 
-        resources
-            META-INF
-    
-    webapp
-        WEB-INF
-           <.jsp files>
-        css
-           <.cdd files>
-        js
-           <.js files>
-        img
+           resources
+               META-INF
+
+       webapp
+           WEB-INF
+              <.jsp files>
+           css
+              <.cdd files>
+           js
+              <.js files>
+           img
 
 
 The MVC architecture separates the application logic into distinct components: controllers handle user interactions, models represent data entities, services encapsulate business logic, and the persistence package contains the DAO classes responsible for data access and database operations.
