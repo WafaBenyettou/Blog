@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shodan API Response</title>
+</head>
+<body>
+    <h1>Shodan API Response</h1>
+    <pre>
+        <%= request.getAttribute("apiResponse") %>
+    </pre>
+</body>
+</html>

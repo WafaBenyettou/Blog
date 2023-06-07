@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shodan IP Lookup</title>
+</head>
+<body>
+    <h1>Shodan IP Lookup</h1>
+    <pre>
+        <%= request.getAttribute("apiResponse") %>
+    </pre>
+</body>
+</html>

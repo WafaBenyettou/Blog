@@ -9,15 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Durgesh
- */
 public class LogoutServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-	/**
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -31,29 +27,20 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LogoutServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
 
+            // Remove the "currentUser" attribute from the session to log out the user
             HttpSession s = request.getSession();
-
             s.removeAttribute("currentUser");
 
+            // Set a message to be displayed on the login page after successful logout
             Message m = new Message("Logout Successfully", "success", "alert-success");
-
             s.setAttribute("msg", m);
 
-            response.sendRedirect("login_page.jsp");
-
-            out.println("</body>");
-            out.println("</html>");
+            // Redirect the user to the login page
+            response.sendRedirect("LoginServlet");
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -90,6 +77,5 @@ public class LogoutServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

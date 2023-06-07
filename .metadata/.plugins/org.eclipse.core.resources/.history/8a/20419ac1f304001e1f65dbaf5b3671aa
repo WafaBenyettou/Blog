@@ -1,0 +1,59 @@
+package com.blog.servlets;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ImageServlet
+ */
+@WebServlet("/ImageServlet")
+public class ImageServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ImageServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */ protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	            throws ServletException, IOException {
+	        String imageName = request.getParameter("imageName"); // Get the image file name from the request parameter
+	        String imagePath = getServletContext().getRealPath("/blog_pics/" + imageName); // Get the absolute path of the image file
+
+	        // Set the appropriate content type for the response
+	        String contentType = getServletContext().getMimeType(imagePath);
+	        response.setContentType(contentType);
+
+	        // Write the image file to the response output stream
+	        try (InputStream input = new FileInputStream(imagePath);
+	             OutputStream output = response.getOutputStream()) {
+	            byte[] buffer = new byte[4096];
+	            int bytesRead;
+	            while ((bytesRead = input.read(buffer)) != -1) {
+	                output.write(buffer, 0, bytesRead);
+	            }
+	        }
+	    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,71 @@
+package com.blog.servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoadPostsServlet
+ */
+@WebServlet("/LoadPostsServlet")
+public class LoadPostsServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoadPostsServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Retrieve the desired category ID from the request parameters
+        String categoryId = request.getParameter("cid");
+
+        // Retrieve posts based on the category ID
+        List<Post> posts = retrievePosts(categoryId);
+
+        // Set the retrieved posts in the request attribute
+        request.setAttribute("posts", posts);
+
+        // Forward the request to the load_posts.jsp file
+        request.getRequestDispatcher("/WEB-INF/jsp/load_posts.jsp").forward(request, response);
+    }
+
+    private List<Post> retrievePosts(String categoryId) {
+        try {
+            // Establish a connection to the database
+            Connection conn = ConnectionProvider.getConnection();
+
+            // Create an instance of the PostDao to retrieve posts
+            PostDao postDao = new PostDao(conn);
+
+            // Retrieve posts based on the category ID
+            List<Post> posts = postDao.getPostsByCategory(categoryId);
+
+            // Close the database connection
+            conn.close();
+
+            return posts;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

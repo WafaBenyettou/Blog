@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class ShodanAPIClient {
+    public static void main(String[] args) {
+        try {
+            // Replace with your Shodan API key
+            String apiKey = "imjJFXulzaB22NXcq13S6K2TsB0RDyPf";
+
+            // Example API request
+            String apiUrl = "https://api.shodan.io/shodan/host/{ip}?key=" + apiKey;
+
+            // Replace {ip} with the IP address you want to query
+
+            URL url = new URL(apiUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            StringBuilder response = new StringBuilder();
+
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            reader.close();
+
+            // Process the API response
+            System.out.println(response.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

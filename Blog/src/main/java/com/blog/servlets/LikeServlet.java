@@ -9,15 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Durgesh
- */
 public class LikeServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-	/**
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -35,19 +31,17 @@ public class LikeServlet extends HttpServlet {
             int uid = Integer.parseInt(request.getParameter("uid"));
             int pid = Integer.parseInt(request.getParameter("pid"));
 
-//            out.println("data from server");
-//            out.println(operation);
-//            out.println(uid);
-//            out.println(pid);
+            // Create an instance of LikeDao to perform like operations
             LikeDao ldao = new LikeDao(ConnectionProvider.getConnection());
+
             if (operation.equals("like")) {
-                boolean f=ldao.insertLike(pid, uid);
+                // Insert a like for the specified post and user
+                boolean f = ldao.insertLike(pid, uid);
                 out.println(f);
             }
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -84,6 +78,5 @@ public class LikeServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

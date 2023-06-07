@@ -1,7 +1,5 @@
 package com.blog.servlets;
 
-
-
 import com.blog.dao.UserDao;
 import com.blog.entities.Message;
 import com.blog.entities.User;
@@ -10,6 +8,8 @@ import com.blog.helper.Helper;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -18,16 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-/**
- *
- * @author Durgesh
- */
 @MultipartConfig
 public class EditServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-	/**
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -48,7 +44,7 @@ public class EditServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 
-//            fetch all data
+            // Fetch all data
             String userEmail = request.getParameter("user_email");
             String userName = request.getParameter("user_name");
             String userPassword = request.getParameter("user_password");
@@ -57,7 +53,7 @@ public class EditServlet extends HttpServlet {
 
             String imageName = part.getSubmittedFileName();
 
-            //get the user from the session...
+            // Get the user from the session
             HttpSession s = request.getSession();
             User user = (User) s.getAttribute("currentUser");
             user.setEmail(userEmail);
@@ -68,18 +64,14 @@ public class EditServlet extends HttpServlet {
 
             user.setProfile(imageName);
 
-            //update database....
+            // Update database
             UserDao userDao = new UserDao(ConnectionProvider.getConnection());
-
             boolean ans = userDao.updateUser(user);
             if (ans) {
-
                 String path = request.getRealPath("/") + "pics" + File.separator + user.getProfile();
 
-                //start of photo work
-                //delete code
+                // Delete old profile photo
                 String pathOldFile = request.getRealPath("/") + "pics" + File.separator + oldFile;
-
                 if (!oldFile.equals("default.png")) {
                     Helper.deleteFile(pathOldFile);
                 }
@@ -88,22 +80,18 @@ public class EditServlet extends HttpServlet {
                     out.println("Profile updated...");
                     Message msg = new Message("Profile details updated...", "success", "alert-success");
                     s.setAttribute("msg", msg);
-
                 } else {
-                    //////////////
                     Message msg = new Message("Something went wrong..", "error", "alert-danger");
                     s.setAttribute("msg", msg);
                 }
-
-                //end of phots work
             } else {
                 out.println("not updated..");
                 Message msg = new Message("Something went wrong..", "error", "alert-danger");
                 s.setAttribute("msg", msg);
-
             }
 
-            response.sendRedirect("profile.jsp");
+            // Redirect to profile.jsp
+            response.sendRedirect("ProfileServlet");
 
             out.println("</body>");
             out.println("</html>");
@@ -122,7 +110,7 @@ public class EditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+    	   processRequest(request, response);
     }
 
     /**
@@ -148,5 +136,4 @@ public class EditServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

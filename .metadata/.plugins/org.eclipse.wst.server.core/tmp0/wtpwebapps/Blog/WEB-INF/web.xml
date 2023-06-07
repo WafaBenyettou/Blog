@@ -28,6 +28,13 @@
         <servlet-name>LikeServlet</servlet-name>
         <servlet-class>com.blog.servlets.LikeServlet</servlet-class>
     </servlet>
+     <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>com.blog.servlets.ProfileServlet</servlet-class>
+    </servlet>
+
+   
+    
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -56,6 +63,27 @@
         <servlet-name>LikeServlet</servlet-name>
         <url-pattern>/LikeServlet</url-pattern>
     </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>ProfileServlet</servlet-name>
+    <url-pattern>/ProfileServlet</url-pattern>
+</servlet-mapping>
+    <!-- Add IndexServlet -->
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>com.blog.servlets.IndexServlet</servlet-class>
+    </servlet>
+    
+    <!-- Configure IndexServlet to handle root URL -->
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Set IndexServlet as the default servlet -->
+    <welcome-file-list>
+        <welcome-file>IndexServlet</welcome-file>
+    </welcome-file-list>
     <session-config>
         <session-timeout>
             30

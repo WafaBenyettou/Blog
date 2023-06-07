@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shodan API Demo</title>
+</head>
+<body>
+    <h1>Shodan API Demo</h1>
+    <form action="ShodanServlet" method="post">
+        <label for="ipAddress">Enter IP Address:</label>
+        <input type="text" id="ipAddress" name="ipAddress">
+        <button type="submit">Submit</button>
+    </form>
+    <pre>
+        <%= request.getAttribute("apiResponse") %>
+    </pre>
+</body>
+</html>

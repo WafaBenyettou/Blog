@@ -3,3 +3,25 @@
 1686061819430	Move 'register_page.jsp' to 'webapp'
 1686061822484	Move 'error_page.jsp' to 'blog_pics'
 1686061826050	Move 'error_page.jsp' to 'webapp'
+1686069636121	Move 'login_page.jsp' to 'jsp'
+1686069653924	Move 'navbar.jsp' to 'jsp'
+1686069679753	Move 'error_page.jsp' to 'jsp'
+1686069681771	Move 'index.jsp' to 'jsp'
+1686069683793	Move 'load_posts.jsp' to 'jsp'
+1686069686072	Move 'profile.jsp' to 'jsp'
+1686069687921	Move 'register_page.jsp' to 'jsp'
+1686069691266	Move 'show_blog_page.jsp' to 'jsp'
+1686075262622	Delete element
+1686078514628	Delete element
+1686092982980	Delete element
+1686102069041	Delete element
+1686102079273	Delete element
+1686107241574	Delete element
+1686107482776	Move 'shodan.jsp' to 'webapp'
+1686109687824	Move 'shodan.jsp' to 'jsp'
+1686109838089	Move 'blog_pics' to 'WEB-INF'
+1686109892253	Move 'blog_pics' to 'jsp'
+1686109954470	Move 'blog_pics' to 'webapp'
+1686110370959	Move 'blog_pics' to 'jsp'
+1686110529227	Move 'blog_pics' to 'webapp'
+1686115546684	Delete element
