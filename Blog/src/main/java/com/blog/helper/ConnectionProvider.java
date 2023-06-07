@@ -14,7 +14,7 @@ public class ConnectionProvider {
                 Class.forName("org.postgresql.Driver");
 
                 // Create a connection
-                con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/myblog","myuser", "123");
+                con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+DATABASE_NAME,USER_NAME, PASSWORD);
             }
         } catch (Exception e) {
             e.printStackTrace();
